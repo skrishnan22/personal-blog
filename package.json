@@ -37,7 +37,7 @@
     "astro": "^4.9.2",
     "astro-eslint-parser": "^1.0.2",
     "eslint-plugin-markdown": "^5.0.0",
-    "estree-util-value-to-estree": "^3.1.1",
+    "estree-util-value-to-estree": "^3.5.0",
     "plaiceholder": "^3.0.0",
     "postcss": "8.4.38",
     "reading-time": "^1.5.0",
