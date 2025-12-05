@@ -6,8 +6,8 @@ import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { rehypePlugins, remarkPlugins } from "./src/build-time";
 
-const site = "https://skrishnan22.github.io/personal-blog/";
-const base = "/personal-blog/";
+const site = "https://blog.skrishnan.dev/";
+const base = "/";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // https://astro.build/config
