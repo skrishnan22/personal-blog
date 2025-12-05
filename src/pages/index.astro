@@ -20,13 +20,21 @@ posts.sort((a, b) => {
 ---
 
 <BaseLayout title="Krishnan" description="Blog">
-  <h1 slot="header-content" class="text-gray-600 dark:text-gray-500">
-    krishnan
-  </h1>
+  <div slot="header-content" class="flex items-center gap-4">
+    <img 
+      src="/avatar.jpg" 
+      alt="Krishnan" 
+      class="w-12 h-12 rounded-full object-cover border-2 border-gray-200 dark:border-gray-700"
+    />
+    <h1 class="text-gray-600 dark:text-gray-500">
+      krishnan
+    </h1>
+  </div>
   <main class="zaduma-prose py-10">
     <Paragraph>
-      I build AI-driven products with a strong focus on UX, visual learning, and
-      modern web stacks, turning complex ideas into polished real-world apps.
+    I build learning tools that make knowledge easier to absorb and remember. 
+    So far that includes <Link href="https://littleatlas.quest" target="_blank" rel="noopener noreferrer">Little Atlas</Link> and{" "}
+    <Link href="https://lexmora.app" target="_blank" rel="noopener noreferrer">Lexmora</Link>.
     </Paragraph>
 
     <Paragraph>
