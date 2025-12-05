@@ -184,16 +184,9 @@ export function CommandsPalette({
                 </CommandItem>
               </CommandGroup>
               <CommandGroup heading={<GroupHeading>Links</GroupHeading>}>
-                <CommandItem href="https://twitter.com/hasparus">
-                  Twitter
-                </CommandItem>
-                <CommandItem href="https://github.com/hasparus/zaduma">
+                <CommandItem href="https://github.com/skrishnan22">
                   GitHub
                 </CommandItem>
-                <CommandItem href="https://github.com/hasparus/zaduma/issues">
-                  Contact
-                </CommandItem>
-                <CommandItem href="/rss.xml">RSS</CommandItem>
               </CommandGroup>
             </>
           }
@@ -223,14 +216,14 @@ export function CommandsPalette({
 }
 
 interface CommonCommandItemProps
-  extends Omit<CommandCenterItemProps, "onClick"> {}
+  extends Omit<CommandCenterItemProps, "onClick"> { }
 export type CommandItemProps = CommonCommandItemProps &
   (
     | {
-        href?: never;
-        shortcut: string;
-        onClick: (shortcut: string) => void;
-      }
+      href?: never;
+      shortcut: string;
+      onClick: (shortcut: string) => void;
+    }
     | { href: string; shortcut?: never; onClick?: never }
   );
 
