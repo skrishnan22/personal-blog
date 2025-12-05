@@ -4,14 +4,26 @@ export interface LinkProps extends JSX.AnchorHTMLAttributes<HTMLAnchorElement> {
   noUnderline?: boolean;
 }
 
+const baseUrl =
+  import.meta.env.BASE_URL === "/"
+    ? ""
+    : import.meta.env.BASE_URL.replace(/\/$/, "");
+
+function withBasePath(href: LinkProps["href"]) {
+  if (typeof href !== "string") return href;
+  if (!href.startsWith("/") || href.startsWith("//")) return href;
+  return `${baseUrl}${href}`;
+}
+
 export function Link(props: LinkProps) {
-  const [own, rest] = splitProps(props, ["classList", "noUnderline"]);
+  const [own, rest] = splitProps(props, ["classList", "noUnderline", "href"]);
 
   const childIsImg = isChildAnImage(rest.children);
 
   return (
     // eslint-disable-next-line jsx-a11y/anchor-has-content
     <a
+      href={withBasePath(own.href)}
       classList={{
         ...own.classList,
         "underline underline-offset-4 decoration-gray-200 dark:decoration-gray-700  hover:decoration-transparent dark:hover:decoration-transparent focus:decoration-transparent dark:focus:decoration-transparent":
