@@ -42,6 +42,12 @@ jobs:
           echo "ASTRO_SITE=https://skrishnan22.github.io/personal-blog/" >> "$GITHUB_ENV"
           echo "ASTRO_BASE=/personal-blog/" >> "$GITHUB_ENV"
 
+      - name: Run linter
+        run: pnpm lint --quiet
+
+      - name: Typecheck
+        run: pnpm typecheck
+
       - name: Build
         run: pnpm build
 
