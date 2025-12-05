@@ -1,6 +1,7 @@
 import { type JSX, splitProps } from "solid-js";
 
 export interface LinkProps extends JSX.AnchorHTMLAttributes<HTMLAnchorElement> {
+  href: string;
   noUnderline?: boolean;
 }
 
@@ -10,7 +11,6 @@ const baseUrl =
     : import.meta.env.BASE_URL.replace(/\/$/, "");
 
 function withBasePath(href: LinkProps["href"]) {
-  if (typeof href !== "string") return href;
   if (!href.startsWith("/") || href.startsWith("//")) return href;
   return `${baseUrl}${href}`;
 }
